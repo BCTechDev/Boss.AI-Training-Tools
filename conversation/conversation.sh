@@ -2,12 +2,11 @@
 echo "----------------------------------------------------------------------"
 echo "|            Welcome to the Boss.AI Conversation Generator           |"
 echo "----------------------------------------------------------------------"
-CALL :base
-:base
+base() {
 echo "Please type in what Boss should respond to..."
-set /p input="User > "
+read -p "User > "
 echo "Please type in what Boss should say..."
-set /p output="Boss > "
+read -p "Boss > "
 echo "----------------------------------------------------------------------"
 echo "Preparing Boss for that conversation..."
 echo "User:"
@@ -22,4 +21,6 @@ echo "" >> export.txt
 echo "[06-Dec-19 08:59 AM] Boss#4966" >> export.txt
 echo %output% >> export.txt
 echo "" >> export.txt
-CALL :base
+base
+}
+base
